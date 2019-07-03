@@ -1,9 +1,35 @@
+/*
+ //Getting data from Collection
+db.collection('afluencia').get().then((snapshot)=>{
+  snapshot.docs.forEach(doc=>{
+    console.log(doc.data().detecciones)
+  })
+})
+
+//saving data
+
+db.collection('afluencia').add({
+  detecciones: 9,
+  hora: "9am"
+})
+
+*/
+
+
+
+
+var current_name=""
+
 const video = document.getElementById('video')
 var labeledFaceDescriptors = null
 var faceMatcher = null
 var flag=false
 var sw=false
 var dave=false
+var matus = false
+var cesar = false
+var richi = false
+
 
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
@@ -45,18 +71,8 @@ video.addEventListener('play', () => {
     const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceDescriptors().withFaceExpressions()
     //console.log(detections)
     const resizedDetections = faceapi.resizeResults(detections, displaySize)
-    if(resizedDetections[0]){
-      //console.log(resizedDetections[0].alignedRect.score)
-      flag=true
-      sw=false
-    }else{
-      flag=false
-    }
-
-    if(flag==false && !sw){
-      sw=true
-      verifyFace()
-    }
+    
+  
 
     
    
@@ -64,10 +80,18 @@ video.addEventListener('play', () => {
     canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
 
     const results = resizedDetections.map(d => faceMatcher.findBestMatch(d.descriptor))
+    //console.log ("Adentro---->"+Object.keys(resizedDetections).length)
 
     results.forEach((result, i) => {
+     
       const box = resizedDetections[i].detection.box
-      //console.log(result.toString())
+
+
+
+      current_name=getName(result.toString())
+      
+
+
       /*
       if(getName(result.toString())=="Dave"){
         dave=true
@@ -89,17 +113,51 @@ video.addEventListener('play', () => {
     faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
     
    faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
+
+
+   //console.log ("Afuera---->"+Object.keys(resizedDetections).length)
+   if(+Object.keys(resizedDetections).length==0){
+    //console.log(resizedDetections[0].alignedRect.score)
+    flag=true
+    sw=false
+  }else{
+    flag=false
+  }
+ 
+  if(flag==false && !sw ){
+    sw=true
+    addDetection()    
+  
+  }
+
    //faceapi.draw.drawGender(canvas, resizedDetections)
 
 
    //faceapi.draw.drawTextField(canvas, resizedDetections)
-  }, 100)
+  }, 600)
 })
 
 
 
-function verifyFace(){
+function addDetection(name){
+  console.log(this.current_name)
+
   console.log("Nueva detección")
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var dateTime = date+' '+time;
+
+
+  db.collection('detections').add({
+    name: this.current_name,
+    device: 'CAM0908',
+    room: "Auditorio 07",
+    date: dateTime
+  })
+
+  this.flag=false
+
 }
 
 

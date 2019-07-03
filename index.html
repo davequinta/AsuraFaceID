@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!--Firebase Things-->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-firestore.js"></script>
+
+
+
+  <!--EndFirebase Things-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Asura</title>
   <script defer src="face-api.min.js"></script>
-  <script defer src="script.js"></script>
   <style>
     body {
       margin: 0;
@@ -29,4 +37,28 @@
 <body>
   <video id="video" width="720" height="560" autoplay muted></video>
 </body>
+
+
+  
+      <!-- TODO: Add SDKs for Firebase products that you want to use
+          https://firebase.google.com/docs/web/setup#config-web-app -->
+
+      <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyDzs9iemsa4srBM5TnsJ5iOp3FHZh_0B4w",
+          authDomain: "asurafaceid.firebaseapp.com",
+          databaseURL: "https://asurafaceid.firebaseio.com",
+          projectId: "asurafaceid",
+          storageBucket: "asurafaceid.appspot.com",
+          messagingSenderId: "965905618234",
+          appId: "1:965905618234:web:8a39490375360025"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+      </script>
+      <script defer src="script.js"></script>
+
 </html>

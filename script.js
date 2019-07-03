@@ -1,7 +1,9 @@
 const video = document.getElementById('video')
 var labeledFaceDescriptors = null
 var faceMatcher = null
-var flag=true
+var flag=false
+var sw=false
+var dave=false
 
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
@@ -43,17 +45,42 @@ video.addEventListener('play', () => {
     const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceDescriptors().withFaceExpressions()
     //console.log(detections)
     const resizedDetections = faceapi.resizeResults(detections, displaySize)
+    if(resizedDetections[0]){
+      //console.log(resizedDetections[0].alignedRect.score)
+      flag=true
+      sw=false
+    }else{
+      flag=false
+    }
+
+    if(flag==false && !sw){
+      sw=true
+      verifyFace()
+    }
+
+    
+   
 
     canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
 
     const results = resizedDetections.map(d => faceMatcher.findBestMatch(d.descriptor))
+
     results.forEach((result, i) => {
       const box = resizedDetections[i].detection.box
       //console.log(result.toString())
+      /*
+      if(getName(result.toString())=="Dave"){
+        dave=true
+      }else{
+        dave=false
+      }
 
-      if(flag){
+      if(flag && dave ){
+        dave=false
         console.log(getName(result.toString()))
       }
+
+      */
       const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString() })
       drawBox.draw(canvas,resizedDetections)
      // faceapi.draw.drawBox(canvas,  { label: result.toString() })
@@ -70,6 +97,12 @@ video.addEventListener('play', () => {
 })
 
 
+
+function verifyFace(){
+  console.log("Nueva detección")
+}
+
+
 function getName(name){
     var nname= name.split(" ")
     return nname[0]
@@ -77,7 +110,7 @@ function getName(name){
 }
 
 function loadLabeledImages() {
-  const labels = ['Dave','Richi','Cesar','Matus','Luis','KeanuReeves']
+  const labels = ['Dave','Richi','Cesar','Matus','Luis']
   return Promise.all(
     labels.map(async label => {
       const descriptions = []

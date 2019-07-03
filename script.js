@@ -1,7 +1,7 @@
 const video = document.getElementById('video')
 var labeledFaceDescriptors = null
 var faceMatcher = null
-
+var flag=true
 
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
@@ -49,7 +49,11 @@ video.addEventListener('play', () => {
     const results = resizedDetections.map(d => faceMatcher.findBestMatch(d.descriptor))
     results.forEach((result, i) => {
       const box = resizedDetections[i].detection.box
-      console.log(result.toString())
+      //console.log(result.toString())
+
+      if(flag){
+        console.log(getName(result.toString()))
+      }
       const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString() })
       drawBox.draw(canvas,resizedDetections)
      // faceapi.draw.drawBox(canvas,  { label: result.toString() })
@@ -65,6 +69,12 @@ video.addEventListener('play', () => {
   }, 100)
 })
 
+
+function getName(name){
+    var nname= name.split(" ")
+    return nname[0]
+
+}
 
 function loadLabeledImages() {
   const labels = ['Dave','Richi','Cesar','Matus','Luis']

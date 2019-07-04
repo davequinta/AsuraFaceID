@@ -3,7 +3,7 @@ Project for the subject Aplications of OpenSource
 
 <p align="center">
   <img src="logo.jpeg" alt="Iron Bank"
-       width="438" height="316">
+       width="438" height="438">
 </p>
 
 ## Built With

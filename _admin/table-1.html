@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Profile - Brand</title>
+    <title>Table - Brand</title>
     <meta name="description" content="Asura Web App">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
@@ -31,12 +31,12 @@
                 <hr class="sidebar-divider my-0">
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="blank.html"><i class="fas fa-window-maximize"></i><span>Employees</span></a><a class="nav-link" href="#"><i class="fas fa-window-maximize"></i><span>Detecciones</span></a><a class="nav-link active" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="blank.html"><i class="fas fa-window-maximize"></i><span>Employees</span></a><a class="nav-link" href="#"><i class="fas fa-window-maximize"></i><span>Detecciones</span></a><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a>
                         <a
                             class="nav-link" href="#"><i class="fas fa-window-maximize"></i><span>Reportes</span></a><a class="nav-link" href="#"><i class="fas fa-window-maximize"></i><span>Asura Age and Gender</span></a></li>
                     <li class="nav-item" role="presentation"></li>
                     <li class="nav-item" role="presentation"></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="table-1.html"><i class="fas fa-table"></i><span>Detections</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="table-1.html"><i class="fas fa-table"></i><span>Detections</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
@@ -147,121 +147,86 @@
             </div>
             </nav>
             <div class="container-fluid">
-                <h3 class="text-dark mb-4">Ricardo Urrutia</h3>
-                <div class="row mb-3">
-                    <div class="col-lg-4">
-                        <div class="card mb-3">
-                            <div class="card-body text-center shadow"><img class="rounded-circle mb-3 mt-4" src="assets/img/WhatsApp%20Image%202019-07-02%20at%202.41.25%20PM.jpeg" width="260" height="260" />
-
-                                <div class="mb-3"></div>
-                                <p>Ricardo Urrutia</p>
-                            </div>
-                        </div>
-                        <div class="card shadow mb-4"></div>
+                <h3 class="text-dark mb-4">Detections Log</h3>
+                <div class="card shadow">
+                    <div class="card-header py-3">
+                        <p class="text-primary m-0 font-weight-bold">Detection Info</p>
                     </div>
-                    <div class="col-lg-8">
-                        <div class="row mb-3 d-none">
-                            <div class="col">
-                                <div class="card text-white bg-primary shadow">
-                                    <div class="card-body">
-                                        <div class="row mb-2">
-                                            <div class="col">
-                                                <p class="m-0">Peformance</p>
-                                                <p class="m-0"><strong>65.2%</strong></p>
-                                            </div>
-                                            <div class="col-auto"><i class="fas fa-rocket fa-2x"></i></div>
-                                        </div>
-                                        <p class="text-white-50 small m-0"><i class="fas fa-arrow-up"></i>&nbsp;5% since last month</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-white bg-success shadow">
-                                    <div class="card-body">
-                                        <div class="row mb-2">
-                                            <div class="col">
-                                                <p class="m-0">Peformance</p>
-                                                <p class="m-0"><strong>65.2%</strong></p>
-                                            </div>
-                                            <div class="col-auto"><i class="fas fa-rocket fa-2x"></i></div>
-                                        </div>
-                                        <p class="text-white-50 small m-0"><i class="fas fa-arrow-up"></i>&nbsp;5% since last month</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="card-body">
                         <div class="row">
-                            <div class="col">
-                                <div class="card shadow mb-3">
-                                    <div class="card-header py-3">
-                                        <p class="text-primary m-0 font-weight-bold">Personal Data</p>
-                                    </div>
-                                    <div class="card-body">
-                                        <form>
-                                            <div class="form-row">
-                                                <div class="col">
-                                                    <div class="form-group"><label for="username"><strong>Code</strong><br></label><input class="form-control" type="text" placeholder="00025815" name="username"></div>
-                                                </div>
-                                            </div>
-                                            <div class="form-row">
-                                                <div class="col">
-                                                    <div class="form-group"><label for="last_name"><strong>Date of birth</strong></label><input class="form-control" type="text" placeholder="12-04-1995" name="last_name"></div>
-                                                    <div class="form-group"><label for="last_name"><strong>Position</strong></label><input class="form-control" type="text" placeholder="CTO" name="last_name"></div>
-                                                    <div class="form-group"><label for="last_name"><strong>Status</strong><br></label>
-                                                        <div class="btn-group btn-group-toggle" data-toggle="buttons"></div>
-                                                    </div><label class="switch">
-  <input type="checkbox" checked>
-  <span class="slider round"></span>
-</label></div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="card shadow"></div>
+                            <div class="col-md-6 text-nowrap">
+                                <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"><label>Show&nbsp;<select class="form-control form-control-sm custom-select custom-select-sm"><option value="10" selected="">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select>&nbsp;</label></div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card shadow mb-5"></div>
-            </div>
-            <div class="container"><table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <div class="col-md-6">
+                                <div class="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
+                            </div>
+                        </div><div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+    <table class="table dataTable my-0" id="dataTable">
         <thead>
             <tr>
+                <th>Name</th>
                 <th>ID</th>
                 <th>Device</th>
                 <th>Room</th>
                 <th>Date and Time</th>
-               
+             
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>Edinburgh</td>              
+                <td><img class="rounded-circle mr-2" width="30" height="30" src="assets/img/avatars/avatar1.jpeg" />Dave Quintanilla</td>
+                <td>00025815</td>
+                <td>CTO</td>
+                <td>SAMSUNG07</td>
+                <td>2008/11/28 00:00</td>
             </tr>
-              <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>Edinburgh</td>              
+            <tr>
+                <td><img class="rounded-circle mr-2" width="30" height="30" src="assets/img/avatars/avatar1.jpeg" />Dave Quintanilla</td>
+                <td>00025815</td>
+                <td>CTO</td>
+                <td>SAMSUNG07</td>
+                <td>2008/11/28 00:00</td>
             </tr>
-              <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>Edinburgh</td>              
+            <tr>
+                <td><img class="rounded-circle mr-2" width="30" height="30" src="assets/img/avatars/avatar1.jpeg" />Dave Quintanilla</td>
+                <td>00025815</td>
+                <td>CTO</td>
+                <td>SAMSUNG07</td>
+                <td>2008/11/28 00:00</td>
             </tr>
-              <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>Edinburgh</td>              
+            <tr>
+                <td><img class="rounded-circle mr-2" width="30" height="30" src="assets/img/avatars/avatar1.jpeg" />Dave Quintanilla</td>
+                <td>00025815</td>
+                <td>CTO</td>
+                <td>SAMSUNG07</td>
+                <td>2008/11/28 00:00</td>
             </tr>
-           
+            
+            
+            
         </tbody>
-    </table></div>
+       
+    </table>
+</div>
+                        <div class="row">
+                            <div class="col-md-6 align-self-center">
+                                <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
+                            </div>
+                            <div class="col-md-6">
+                                <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                                    <ul class="pagination">
+                                        <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <footer class="bg-white sticky-footer">
             <div class="container my-auto">

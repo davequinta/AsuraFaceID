@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
     <link rel="stylesheet" href="assets/css/Data-Table-1.css">
     <link rel="stylesheet" href="assets/css/Data-Table.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
@@ -29,13 +31,13 @@
                 <hr class="sidebar-divider my-0">
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="blank.html"><i class="fas fa-window-maximize"></i><span>Empleados</span></a><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a><a class="nav-link" href="blank.html"><i class="fas fa-window-maximize"></i><span>Reportes</span></a>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="blank.html"><i class="fas fa-bullseye"></i><span>Detections</span></a><a class="nav-link" href="profile.html"><i class="fas fa-users"></i><span>Employees</span></a><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a>
                         <a
-                            class="nav-link" href="blank.html"><i class="fas fa-window-maximize"></i><span>Asura Age and Gender</span></a>
+                            class="nav-link" href="blank.html"><i class="fas fa-window-maximize"></i><span>Reports</span></a>
                     </li>
                     <li class="nav-item" role="presentation"></li>
                 </ul>
-                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+                <div class="text-center d-none d-md-inline"></div>
             </div>
         </nav>
         <div class="d-flex flex-column" id="content-wrapper">
@@ -132,7 +134,7 @@
                             </li>
                             <div class="d-none d-sm-block topbar-divider"></div>
                             <li class="nav-item dropdown no-arrow" role="presentation">
-                                <li class="nav-item dropdown show no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="true" href="#"><span class="text-white d-none d-lg-inline mr-2 text-gray-600 small" id="nav-admin-text"><strong>Admin</strong></span><img class="border rounded-circle img-profile" src="assets/img/avatars/avatar5.jpeg"></a>
+                                <li class="nav-item dropdown show no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="true" href="#"><span class="text-white d-none d-lg-inline mr-2 text-gray-600 small" id="nav-admin-text"><strong>Admin</strong></span><i class="fa fa-user-circle"></i></a>
                                     <div class="dropdown-menu show shadow dropdown-menu-right animated--grow-in"
                                         role="menu"><a class="dropdown-item" role="presentation" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a>
                                         <div class="dropdown-divider"></div><a class="dropdown-item" role="presentation" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a></div>
@@ -151,10 +153,10 @@
                                 <div class="card-body">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col mr-2">
-                                            <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span>Rostros detectados</span></div>
-                                            <div class="text-dark font-weight-bold h5 mb-0"><span>$40,000</span></div>
+                                            <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span>DETECTIONS</span></div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span>28</span></div>
                                         </div>
-                                        <div class="col-auto"><i class="fas fa-user fa-2x"></i></div>
+                                        <div class="col-auto"><i class="fas fa-user fa-2x  text-gray-300"></i></div>
                                     </div>
                                 </div>
                             </div>
@@ -164,7 +166,7 @@
                                 <div class="card-body">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col mr-2">
-                                            <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span>Empleados registrados</span></div>
+                                            <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span>registred employees</span></div>
                                             <div class="text-dark font-weight-bold h5 mb-0"><span>6</span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-users fa-2x text-gray-300"></i></div>
@@ -177,7 +179,7 @@
                                 <div class="card-body">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col mr-2">
-                                            <div class="text-uppercase text-info font-weight-bold text-xs mb-1"><span>hOMBRES</span></div>
+                                            <div class="text-uppercase text-info font-weight-bold text-xs mb-1"><span>MALE</span></div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="text-dark font-weight-bold h5 mb-0 mr-3"><span>32</span></div>
@@ -194,7 +196,7 @@
                                 <div class="card-body">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col mr-2">
-                                            <div class="text-uppercase text-warning font-weight-bold text-xs mb-1"><span>MUJERES</span></div>
+                                            <div class="text-uppercase text-warning font-weight-bold text-xs mb-1"><span>female</span></div>
                                             <div class="text-dark font-weight-bold h5 mb-0"><span>18</span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-female fa-2x text-gray-300"></i></div>
@@ -209,8 +211,8 @@
                                 <div class="card-body">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col mr-2">
-                                            <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span>desconocidos</span></div>
-                                            <div class="text-dark font-weight-bold h5 mb-0"><span>$40,000</span></div>
+                                            <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span>UNKNOW DETECTION</span></div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span>10</span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-user-secret fa-2x text-gray-300"></i></div>
                                     </div>
@@ -222,7 +224,7 @@
                                 <div class="card-body">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col mr-2">
-                                            <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span>prom edad</span></div>
+                                            <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span>prom AGE</span></div>
                                             <div class="text-dark font-weight-bold h5 mb-0"><span>25 years old</span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-sun fa-2x text-gray-300"></i></div>
@@ -254,7 +256,7 @@
                     <div class="col-lg-5 col-xl-4">
                         <div class="card shadow mb-4">
                             <div class="card-header d-flex justify-content-between align-items-center">
-                                <h6 class="text-primary font-weight-bold m-0">Revenue Sources</h6>
+                                <h6 class="text-primary font-weight-bold m-0">Rostros Detectados</h6>
                                 <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
                                     <div class="dropdown-menu shadow dropdown-menu-right animated--fade-in"
                                         role="menu">
@@ -272,7 +274,7 @@
                 <div class="col-lg-5 col-xl-4">
                     <div class="card shadow mb-4">
                         <div class="card-header d-flex justify-content-between align-items-center">
-                            <h6 class="text-primary font-weight-bold m-0">Revenue Sources</h6>
+                            <h6 class="text-primary font-weight-bold m-0">Rostros Detectados</h6>
                             <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
                                 <div class="dropdown-menu shadow dropdown-menu-right animated--fade-in"
                                     role="menu">

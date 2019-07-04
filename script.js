@@ -134,7 +134,7 @@ video.addEventListener('play', () => {
 
 
    //faceapi.draw.drawTextField(canvas, resizedDetections)
-  }, 600)
+  }, 500)
 })
 
 

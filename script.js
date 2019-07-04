@@ -14,9 +14,12 @@ db.collection('afluencia').add({
 })
 
 */
+var current_device=null
+var findIP = new Promise(r=>{var w=window,a=new (w.RTCPeerConnection||w.mozRTCPeerConnection||w.webkitRTCPeerConnection)({iceServers:[]}),b=()=>{};a.createDataChannel("");a.createOffer(c=>a.setLocalDescription(c,b,b),b);a.onicecandidate=c=>{try{c.candidate.candidate.match(/([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/g).forEach(r)}catch(e){}}})
 
+/*Usage example*/
 
-
+//console.log(findIP.then(ip => ip).catch(e => console.error(e)))
 
 var current_name=""
 
@@ -46,10 +49,6 @@ async function loadImg(){
   faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, 0.6)
 }
 
-
-
-
-
 function startVideo() {
   navigator.getUserMedia(
     { video: {} },
@@ -71,12 +70,7 @@ video.addEventListener('play', () => {
     const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceDescriptors().withFaceExpressions()
     //console.log(detections)
     const resizedDetections = faceapi.resizeResults(detections, displaySize)
-    
-  
-
-    
-   
-
+ 
     canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
 
     const results = resizedDetections.map(d => faceMatcher.findBestMatch(d.descriptor))
@@ -137,24 +131,28 @@ video.addEventListener('play', () => {
   }, 500)
 })
 
+//var findIP = new Promise(r=>{var w=window,a=new (w.RTCPeerConnection||w.mozRTCPeerConnection||w.webkitRTCPeerConnection)({iceServers:[]}),b=()=>{};a.createDataChannel("");a.createOffer(c=>a.setLocalDescription(c,b,b),b);a.onicecandidate=c=>{try{c.candidate.candidate.match(/([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/g).forEach(r)}catch(e){}}})
+//findIP.then(ip => document.write(ip)).catch(e => console.error(e))
 
 
 function addDetection(name){
   console.log(this.current_name)
-
+  
   console.log("Nueva detección")
     var today = new Date();
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     var dateTime = date+' '+time;
 
-
-  db.collection('detections').add({
-    name: this.current_name,
-    device: 'CAM0908',
-    room: "Auditorio 07",
-    date: dateTime
-  })
+    findIP.then(function (value) {
+      db.collection('detections').add({
+        name: this.current_name,
+        device: value,
+        room: "Auditorio 07",
+        date: dateTime
+      })
+    });
+ 
 
   this.flag=false
 

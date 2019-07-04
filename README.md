@@ -2,7 +2,7 @@
 Project for the subject Aplications of OpenSource
 
 <p align="center">
-  <img src="logo.png" alt="Iron Bank"
+  <img src="logo.jpeg" alt="Iron Bank"
        width="438" height="316">
 </p>
 

@@ -18,7 +18,7 @@ Project for the subject Aplications of OpenSource
 * **César Lima**  - [DYuusha](https://github.com/DYuusha)
 * **Luis Fuentes**  - [hmmatus](https://github.com/hmmatus)
 * **Ricardo Rivera**  - [hmmatus](https://github.com/hmmatus)
-* **David Quintanilla** - [davidquintanilla415](https://github.com/davidquintanilla415)
+* **David Quintanilla** - [davidquintanilla415](https://github.com/davequinta)
 
 See also the list of [contributors](https://github.com/AsuraFaceID/contributors) who participated in this project.
 
